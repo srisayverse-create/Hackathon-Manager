@@ -1,0 +1,2088 @@
+have added an <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRISAY-VERSE - Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .language-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .language-card:nth-child(2) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .language-card:nth-child(3) {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .language-card:nth-child(4) {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .language-card:nth-child(5) {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .language-card:nth-child(6) {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="gradient-bg shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-white">🌟 SRISAY-VERSE</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-white hover:text-purple-200 transition-colors px-3 py-2 rounded-lg">Home</a>
+                    <a href="#skills" class="nav-link text-white hover:text-purple-200 transition-colors px-3 py-2 rounded-lg">Skills</a>
+                    <a href="#features" class="nav-link text-white hover:text-purple-200 transition-colors px-3 py-2 rounded-lg">Features</a>
+                    <a href="#resources" class="nav-link text-white hover:text-purple-200 transition-colors px-3 py-2 rounded-lg">Resources</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="loginBtn"
+                        class="bg-white text-purple-600 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+                        Login
+                    </button>
+                    <button id="adminBtn"
+                        class="bg-purple-800 text-white px-4 py-2 rounded-lg font-medium hover:bg-purple-900 transition-colors">
+                        Admin Panel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Hero Section -->
+        <div class="text-center mb-16">
+            <h2 class="text-5xl font-bold text-gray-800 mb-6">Welcome to SRISAY-VERSE</h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Explore our comprehensive technical expertise across Frontend, Backend, AI/ML, and Design. Click on any
+                skill area to discover the technologies and tools we master.
+            </p>
+            <div class="flex justify-center items-center space-x-4 mb-8">
+                <span class="text-gray-700 font-medium">Select Interface Language:</span>
+                <select id="interfaceLanguage"
+                    class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="zh">中文</option>
+                    <option value="ja">日本語</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Skills Selection -->
+        <div class="mb-16">
+            <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">Explore Our Technical Expertise</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="#" class="language-card rounded-xl p-8 text-white card-hover cursor-pointer"
+                    onclick="handleCardClick(event, 'Frontend')">
+                    <div class="text-4xl mb-4">💻</div>
+                    <h4 class="text-2xl font-bold mb-2">Frontend</h4>
+                    <p class="opacity-90">Modern web development with cutting-edge technologies</p>
+                    <div class="mt-4 text-sm opacity-75">HTML • CSS • JavaScript • React.js • Vue.js • Next.js</div>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-xs bg-white bg-opacity-20 px-2 py-1 rounded-full">📚 Resources</span>
+                        <span class="text-xs bg-white bg-opacity-20 px-2 py-1 rounded-full">✨ Features</span>
+                    </div>
+                </a>
+
+                <a href="#" class="language-card rounded-xl p-8 text-white card-hover cursor-pointer"
+                    onclick="handleCardClick(event, 'UI/UX Designing')">
+                    <div class="text-4xl mb-4">🎨</div>
+                    <h4 class="text-2xl font-bold mb-2">UI/UX Designing</h4>
+                    <p class="opacity-90">Creating beautiful and intuitive user experiences</p>
+                    <div class="mt-4 text-sm opacity-75">Parallax Design • Color Theory • Typography • Layouts • Figma •
+                        Canva</div>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-xs bg-white bg-opacity-20 px-2 py-1 rounded-full">📚 Resources</span>
+                        <span class="text-xs bg-white bg-opacity-20 px-2 py-1 rounded-full">✨ Features</span>
+                    </div>
+                </a>
+
+                <a href="#" class="language-card rounded-xl p-8 text-white card-hover cursor-pointer"
+                    onclick="handleCardClick(event, 'Backend')">
+                    <div class="text-4xl mb-4">⚙️</div>
+                    <h4 class="text-2xl font-bold mb-2">Backend</h4>
+                    <p class="opacity-90">Robust server-side development and API creation</p>
+                    <div class="mt-4 text-sm opacity-75">Node.js • Express.js • JavaScript • RESTful API • Git & GitHub
+                    </div>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-xs bg-white bg-opacity-20 px-2 py-1 rounded-full">📚 Resources</span>
+                        <span class="text-xs bg-white bg-opacity-20 px-2 py-1 rounded-full">✨ Features</span>
+                    </div>
+                </a>
+
+                <a href="#" class="language-card rounded-xl p-8 text-white card-hover cursor-pointer"
+                    onclick="handleCardClick(event, 'AI/ML')">
+                    <div class="text-4xl mb-4">🤖</div>
+                    <h4 class="text-2xl font-bold mb-2">AI/ML</h4>
+                    <p class="opacity-90">Machine learning and artificial intelligence solutions</p>
+                    <div class="mt-4 text-sm opacity-75">PyTorch • Hugging Face • Pandas • NumPy • Matplotlib • Seaborn
+                    </div>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-xs bg-white bg-opacity-20 px-2 py-1 rounded-full">📚 Resources</span>
+                        <span class="text-xs bg-white bg-opacity-20 px-2 py-1 rounded-full">✨ Features</span>
+                    </div>
+                </a>
+
+                <div class="language-card rounded-xl p-8 text-white card-hover cursor-pointer"
+                    onclick="selectSkill('Data Science')">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h4 class="text-2xl font-bold mb-2">Data Science</h4>
+                    <p class="opacity-90">Transform data into actionable insights</p>
+                    <div class="mt-4 text-sm opacity-75">Python • Pandas • NumPy • Data Visualization • Statistical
+                        Analysis</div>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-xs bg-white bg-opacity-20 px-2 py-1 rounded-full">📚 Resources</span>
+                        <span class="text-xs bg-white bg-opacity-20 px-2 py-1 rounded-full">✨ Features</span>
+                    </div>
+                </div>
+
+                <a href="#" class="language-card rounded-xl p-8 text-white card-hover cursor-pointer"
+                    onclick="handleCardClick(event, 'Full Stack')">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h4 class="text-2xl font-bold mb-2">Full Stack</h4>
+                    <p class="opacity-90">End-to-end development solutions</p>
+                    <div class="mt-4 text-sm opacity-75">Frontend + Backend + Database + Deployment</div>
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-xs bg-white bg-opacity-20 px-2 py-1 rounded-full">📚 Resources</span>
+                        <span class="text-xs bg-white bg-opacity-20 px-2 py-1 rounded-full">✨ Features</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div id="features" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                <div class="text-4xl mb-4">📚</div>
+                <h4 class="text-xl font-bold text-gray-800 mb-3">Interactive Lessons</h4>
+                <p class="text-gray-600">Engaging lessons with multimedia content, quizzes, and real-time feedback</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                <div class="text-4xl mb-4">🎯</div>
+                <h4 class="text-xl font-bold text-gray-800 mb-3">Personalized Learning</h4>
+                <p class="text-gray-600">AI-powered curriculum that adapts to your learning pace and style</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                <div class="text-4xl mb-4">🏆</div>
+                <h4 class="text-xl font-bold text-gray-800 mb-3">Progress Tracking</h4>
+                <p class="text-gray-600">Monitor your progress with detailed analytics and achievement badges</p>
+            </div>
+        </div>
+
+        <!-- Learning Resources Section -->
+        <div id="resources" class="mb-16">
+            <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">📖 Learning Resources</h3>
+
+            <!-- Frontend Resources -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h4 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <span class="text-3xl mr-3">💻</span> Frontend Development
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">HTML</h5>
+                        <a href="https://youtu.be/k2DSi1zGEc8?si=7s5FbayWi7bjSMQh" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">CSS (Basics)</h5>
+                        <a href="https://youtu.be/k2DSi1zGEc8?si=7s5FbayWi7bjSMQh" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">CSS (Advanced)</h5>
+                        <a href="https://youtu.be/WuiB5TAQOAM?si=V5WxfYRrAWUyBvE9" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">JavaScript (Basics)</h5>
+                        <a href="https://youtu.be/sscX432bMZo?si=U6BdToUHaNcwuY4M" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">JavaScript (Advanced)</h5>
+                        <a href="https://youtu.be/sscX432bMZo?si=U6BdToUHaNcwuY4M" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">React.js</h5>
+                        <a href="https://youtu.be/CgkZ7MvWUAA?si=MnKsoaDBkMlrgEwi" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">Next.js</h5>
+                        <a href="https://youtu.be/KjY94sAKLlw?si=LDX5cCsPLLHMxNuW" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">Vue.js</h5>
+                        <a href="https://youtu.be/FXpIoQ_rT_c?si=FLacNgxIO4k1uQRq" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UI/UX Design Resources -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h4 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <span class="text-3xl mr-3">🎨</span> UI/UX Design
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">Color Theory</h5>
+                        <a href="https://youtu.be/7Ba7hI1yAqc?si=HZNZ2-mywXLNp4Ft" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">Typography</h5>
+                        <a href="https://youtu.be/uwNClNmekGU?si=qopMgxfvVf05Nx4v" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">Layout</h5>
+                        <a href="https://youtu.be/NTmh8l-Xl4c?si=suO7CTaNcv0AGn40" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">Parallax Design</h5>
+                        <a href="https://youtu.be/Cf_A81NhNWc?si=L-KQHX29AbC_ARyK" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">Figma</h5>
+                        <a href="https://youtu.be/truRwcI7-kg?si=_pPr2WzciNGaIFg2" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">Canva Visual Elements</h5>
+                        <a href="https://youtu.be/3Fu8sNrOex8?si=-jlqAV-hi6kYWZSQ" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend Resources -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h4 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <span class="text-3xl mr-3">⚙️</span> Backend Development
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">JavaScript</h5>
+                        <a href="https://youtu.be/427pAhy9dI8?si=V57-zdiUl-UjWl2_" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">Node.js</h5>
+                        <a href="https://www.youtube.com/watch?v=MIJt9H69QVc" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">Express.js</h5>
+                        <a href="https://youtu.be/Oe421EPjeBE?si=jIuevTN6cbbiC_nD" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">RESTful APIs</h5>
+                        <a href="https://youtu.be/MIJt9H69QVc?si=dUaarI57VyjcCLlO" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">PyTorch</h5>
+                        <a href="https://youtu.be/V_xro1bcAuA?si=k9oLbgg79n-zOFv9" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">Git & GitHub</h5>
+                        <a href="https://youtu.be/q8EevlEpQ2A?si=0Ih7sdoWRWyS001E" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI/ML Resources -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h4 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <span class="text-3xl mr-3">🤖</span> AI & Machine Learning
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">PyTorch</h5>
+                        <a href="https://youtu.be/V_xro1bcAuA?si=k9oLbgg79n-zOFv9" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">Hugging Face (Part 1)</h5>
+                        <a href="https://youtu.be/b665B04CWkI?si=e-buL-egGm2apfr1" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">Pandas</h5>
+                        <a href="https://youtu.be/oiCppYglBIU?si=qjYcUshYqESTD122" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">NumPy</h5>
+                        <a href="https://youtu.be/9DhZ-JCWvDw?si=_UwcOk47k59xXUxe" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">Matplotlib</h5>
+                        <a href="https://youtu.be/kM_eVEEWfnE?si=xOut1GLMHRbC3FiV" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">Seaborn</h5>
+                        <a href="https://youtu.be/XPXYyr3eN0s?si=tubzBiCpCkLwwI5l" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <h5 class="font-semibold text-gray-800 mb-2">Hugging Face (Part 2)</h5>
+                        <a href="https://youtu.be/qUmWOVTTfPI?si=WfweMt9NNFxINZQP" target="_blank"
+                           class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">User Login</h3>
+            <form id="loginForm">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Username</label>
+                    <input type="text" id="username"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        placeholder="Enter your username">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Password</label>
+                    <input type="password" id="password"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        placeholder="Enter your password">
+                </div>
+                <button type="submit"
+                    class="w-full gradient-bg text-white py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                    Login
+                </button>
+            </form>
+            <button id="closeLogin"
+                class="mt-4 w-full text-gray-500 hover:text-gray-700 transition-colors">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Admin Panel Modal -->
+    <div id="adminModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">Admin Control Panel</h3>
+                <button id="notificationBtn" class="text-gray-600 hover:text-gray-800 text-xl" title="Notifications">
+                    🔔
+                </button>
+            </div>
+
+            <!-- Skill Links Management Section -->
+            <div id="skillLinksManagement" class="mb-8">
+                <h4 class="text-xl font-semibold text-gray-800 mb-4">Skill Links Management</h4>
+                <form id="skillLinksForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="linkFrontend" class="block text-gray-700 font-medium mb-1">Frontend URL</label>
+                        <input type="url" id="linkFrontend" placeholder="https://example.com/frontend"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="linkUIUX" class="block text-gray-700 font-medium mb-1">UI/UX Designing URL</label>
+                        <input type="url" id="linkUIUX" placeholder="https://example.com/uiux"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="linkBackend" class="block text-gray-700 font-medium mb-1">Backend URL</label>
+                        <input type="url" id="linkBackend" placeholder="https://example.com/backend"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="linkAIML" class="block text-gray-700 font-medium mb-1">AI/ML URL</label>
+                        <input type="url" id="linkAIML" placeholder="https://example.com/aiml"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="linkDataScience" class="block text-gray-700 font-medium mb-1">Data Science URL</label>
+                        <input type="url" id="linkDataScience" placeholder="https://example.com/datascience"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="linkFullStack" class="block text-gray-700 font-medium mb-1">Full Stack URL</label>
+                        <input type="url" id="linkFullStack" placeholder="https://example.com/fullstack"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+                    <div class="md:col-span-2 flex justify-end space-x-4 mt-4">
+                        <button type="button" id="saveSkillLinks"
+                            class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                            Save Links
+                        </button>
+                        <button type="button" id="clearSkillLinks"
+                            class="bg-gray-400 text-white px-6 py-2 rounded-lg hover:bg-gray-500 transition-colors">
+                            Clear Links
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Admin Login -->
+            <div id="adminLogin" class="mb-8">
+                <form id="adminLoginForm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-gray-700 text-sm font-medium mb-2">Admin Username</label>
+                            <input type="text" id="adminUsername"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                placeholder="Admin username">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-medium mb-2">Admin Password</label>
+                            <input type="password" id="adminPassword"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                placeholder="Admin password">
+                        </div>
+                    </div>
+                    <button type="submit"
+                        class="gradient-bg text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                        Access Admin Panel
+                    </button>
+                </form>
+            </div>
+
+            <!-- Admin Dashboard (Hidden initially) -->
+            <div id="adminDashboard" class="hidden">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-blue-50 rounded-lg p-6">
+                        <h4 class="text-lg font-semibold text-blue-800 mb-2">Total Users</h4>
+                        <p class="text-3xl font-bold text-blue-600" id="totalUsers">1,247</p>
+                    </div>
+                    <div class="bg-green-50 rounded-lg p-6">
+                        <h4 class="text-lg font-semibold text-green-800 mb-2">Active Learners</h4>
+                        <p class="text-3xl font-bold text-green-600" id="activeUsers">892</p>
+                    </div>
+                    <div class="bg-purple-50 rounded-lg p-6">
+                        <h4 class="text-lg font-semibold text-purple-800 mb-2">Courses Available</h4>
+                        <p class="text-3xl font-bold text-purple-600" id="totalCourses">6</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-4">User Management</h4>
+                    <div class="space-y-3" id="userList">
+                        <div class="flex items-center justify-between bg-white p-4 rounded-lg">
+                            <div>
+                                <span class="font-medium">john_doe</span>
+                                <span class="text-gray-500 ml-2">Learning Spanish</span>
+                            </div>
+                            <div class="space-x-2">
+                                <button onclick="editUser('john_doe', 'Learning Spanish')"
+                                    class="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600">Edit</button>
+                                <button onclick="removeUser('john_doe')"
+                                    class="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600">Remove</button>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between bg-white p-4 rounded-lg">
+                            <div>
+                                <span class="font-medium">maria_garcia</span>
+                                <span class="text-gray-500 ml-2">Learning French</span>
+                            </div>
+                            <div class="space-x-2">
+                                <button onclick="editUser('maria_garcia', 'Learning French')"
+                                    class="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600">Edit</button>
+                                <button onclick="removeUser('maria_garcia')"
+                                    class="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Internships Section -->
+                <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-4">Internships Management</h4>
+                    <form id="internshipForm" class="mb-4 space-y-3">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <input type="text" id="internshipTitle" placeholder="Internship Title"
+                                class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                            <input type="text" id="internshipCompany" placeholder="Company Name"
+                                class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                        </div>
+                        <textarea id="internshipDescription" placeholder="Description"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" rows="2" required></textarea>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <input type="date" id="internshipDeadline"
+                                class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                            <button type="submit"
+                                class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors">Add Internship</button>
+                        </div>
+                    </form>
+                    <div id="internshipList" class="space-y-3">
+                        <!-- Internships will be listed here -->
+                    </div>
+                </div>
+
+                <!-- Hackathon Section -->
+                <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-4">Hackathon Management</h4>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- Add Hackathon User -->
+                        <div>
+                            <h5 class="font-medium text-gray-700 mb-3">Add Hackathon User</h5>
+                            <form id="hackathonUserForm" class="space-y-3">
+                                <input type="text" id="hackathonUserName" placeholder="User Name"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                                <input type="email" id="hackathonUserEmail" placeholder="Email"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                                <input type="text" id="hackathonUserSkills" placeholder="Skills (comma separated)"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                                <button type="submit"
+                                    class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Add User</button>
+                            </form>
+                        </div>
+                        <!-- Add Hackathon Event -->
+                        <div>
+                            <h5 class="font-medium text-gray-700 mb-3">Add Hackathon Event</h5>
+                            <form id="hackathonEventForm" class="space-y-3">
+                                <input type="text" id="hackathonEventTitle" placeholder="Event Title"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                                <input type="date" id="hackathonEventDate"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                                <textarea id="hackathonEventDescription" placeholder="Description"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" rows="2" required></textarea>
+                                <button type="submit"
+                                    class="w-full bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition-colors">Add Event</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div>
+                            <h5 class="font-medium text-gray-700 mb-3">Hackathon Users</h5>
+                            <div id="hackathonUserList" class="space-y-2">
+                                <!-- Hackathon users will be listed here -->
+                            </div>
+                        </div>
+                        <div>
+                            <h5 class="font-medium text-gray-700 mb-3">Hackathon Events</h5>
+                            <div id="hackathonEventList" class="space-y-2">
+                                <!-- Hackathon events will be listed here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications Section -->
+                <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-4">Notifications Management</h4>
+                    <form id="notificationForm" class="mb-4 space-y-3">
+                        <input type="text" id="notificationTitle" placeholder="Notification Title"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                        <textarea id="notificationMessage" placeholder="Message"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" rows="3" required></textarea>
+                        <button type="submit"
+                            class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors">Add Notification</button>
+                    </form>
+                    <div id="notificationList" class="space-y-3">
+                        <!-- Notifications will be listed here -->
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-4">System Settings</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <button class="bg-green-500 text-white p-3 rounded-lg hover:bg-green-600 transition-colors">
+                            Add New Language Course
+                        </button>
+                        <button class="bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition-colors">
+                            Manage Content Library
+                        </button>
+                        <button class="bg-yellow-500 text-white p-3 rounded-lg hover:bg-yellow-600 transition-colors">
+                            View Analytics Reports
+                        </button>
+                        <button class="bg-purple-500 text-white p-3 rounded-lg hover:bg-purple-600 transition-colors">
+                            System Backup
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <button id="closeAdmin" class="mt-6 w-full text-gray-500 hover:text-gray-700 transition-colors">Close Admin
+                Panel</button>
+        </div>
+    </div>
+
+    <!-- Edit User Modal -->
+    <div id="editUserModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Edit User</h3>
+            <form id="editUserForm">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Username</label>
+                    <input type="text" id="editUserName"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Learning Activity</label>
+                    <input type="text" id="editUserActivity"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                </div>
+                <div class="flex space-x-3">
+                    <button type="submit"
+                        class="flex-1 gradient-bg text-white py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Save Changes</button>
+                    <button type="button" id="cancelEditUser"
+                        class="flex-1 bg-gray-500 text-white py-3 rounded-lg font-medium hover:bg-gray-600 transition-colors">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Internship Modal -->
+    <div id="editInternshipModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-lg w-full mx-4">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Edit Internship</h3>
+            <form id="editInternshipForm">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-gray-700 text-sm font-medium mb-2">Title</label>
+                        <input type="text" id="editInternshipTitle"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 text-sm font-medium mb-2">Company</label>
+                        <input type="text" id="editInternshipCompany"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Description</label>
+                    <textarea id="editInternshipDescription"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" rows="3" required></textarea>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Deadline</label>
+                    <input type="date" id="editInternshipDeadline"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                </div>
+                <div class="flex space-x-3">
+                    <button type="submit"
+                        class="flex-1 gradient-bg text-white py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Save Changes</button>
+                    <button type="button" id="cancelEditInternship"
+                        class="flex-1 bg-gray-500 text-white py-3 rounded-lg font-medium hover:bg-gray-600 transition-colors">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Hackathon User Modal -->
+    <div id="editHackathonUserModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Edit Hackathon User</h3>
+            <form id="editHackathonUserForm">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Name</label>
+                    <input type="text" id="editHackathonUserName"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Email</label>
+                    <input type="email" id="editHackathonUserEmail"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Skills</label>
+                    <input type="text" id="editHackathonUserSkills"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                </div>
+                <div class="flex space-x-3">
+                    <button type="submit"
+                        class="flex-1 gradient-bg text-white py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Save Changes</button>
+                    <button type="button" id="cancelEditHackathonUser"
+                        class="flex-1 bg-gray-500 text-white py-3 rounded-lg font-medium hover:bg-gray-600 transition-colors">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Hackathon Event Modal -->
+    <div id="editHackathonEventModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-lg w-full mx-4">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Edit Hackathon Event</h3>
+            <form id="editHackathonEventForm">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Title</label>
+                    <input type="text" id="editHackathonEventTitle"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Date</label>
+                    <input type="date" id="editHackathonEventDate"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Description</label>
+                    <textarea id="editHackathonEventDescription"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" rows="3" required></textarea>
+                </div>
+                <div class="flex space-x-3">
+                    <button type="submit"
+                        class="flex-1 gradient-bg text-white py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Save Changes</button>
+                    <button type="button" id="cancelEditHackathonEvent"
+                        class="flex-1 bg-gray-500 text-white py-3 rounded-lg font-medium hover:bg-gray-600 transition-colors">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Notification Modal -->
+    <div id="editNotificationModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-lg w-full mx-4">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Edit Notification</h3>
+            <form id="editNotificationForm">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Title</label>
+                    <input type="text" id="editNotificationTitle"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-medium mb-2">Message</label>
+                    <textarea id="editNotificationMessage"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" rows="4" required></textarea>
+                </div>
+                <div class="flex space-x-3">
+                    <button type="submit"
+                        class="flex-1 gradient-bg text-white py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Save Changes</button>
+                    <button type="button" id="cancelEditNotification"
+                        class="flex-1 bg-gray-500 text-white py-3 rounded-lg font-medium hover:bg-gray-600 transition-colors">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Popup Modal -->
+    <div id="notificationPopupModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold text-gray-800">Notifications</h3>
+                <button id="closeNotificationPopup" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <div id="notificationContent" class="text-center text-gray-500">
+                <!-- Notifications will be displayed here -->
+                No new notifications
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Tracker Modal -->
+    <div id="progressModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-6xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">Progress Tracker</h3>
+                <button id="closeProgress" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Calendar Section -->
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-4">📅 Learning Calendar</h4>
+                    <div id="calendar" class="mb-4">
+                        <div class="grid grid-cols-7 gap-1 text-center text-sm font-medium text-gray-600 mb-2">
+                            <div>Sun</div>
+                            <div>Mon</div>
+                            <div>Tue</div>
+                            <div>Wed</div>
+                            <div>Thu</div>
+                            <div>Fri</div>
+                            <div>Sat</div>
+                        </div>
+                        <div id="calendarDays" class="grid grid-cols-7 gap-1">
+                            <!-- Calendar days will be generated here -->
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 text-sm">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+                            <span>Completed</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
+                            <span>In Progress</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
+                            <span>Planned</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Details -->
+                <div class="space-y-6">
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-4">📈 Skill Progress</h4>
+                        <div id="skillProgressList" class="space-y-4">
+                            <!-- Progress bars will be generated here -->
+                        </div>
+                    </div>
+
+                    <!-- Project Links Section -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-4">🔗 Learning Resources & Projects</h4>
+                        <div class="space-y-3 mb-4">
+                            <input type="text" id="linkTitle" placeholder="Resource/Project Title"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                            <input type="url" id="linkUrl" placeholder="https://example.com"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                            <select id="linkSkill"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                <option value="">Select Skill</option>
+                            </select>
+                            <button onclick="addResourceLink()"
+                                class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                                Add Resource/Project
+                            </button>
+                        </div>
+                        <div id="resourcesList" class="space-y-2 max-h-60 overflow-y-auto">
+                            <!-- Resources will be listed here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="mt-8 bg-gray-50 rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-gray-800 mb-4">💬 Learning Notes & Comments</h4>
+                <div class="space-y-4">
+                    <textarea id="commentText" placeholder="Add your learning notes, project updates, or reflections..."
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent h-24 resize-none"></textarea>
+                    <div class="flex justify-between items-center">
+                        <input type="date" id="commentDate"
+                            class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        <button onclick="addComment()"
+                            class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                            Add Note
+                        </button>
+                    </div>
+                </div>
+                <div id="commentsList" class="mt-6 space-y-3 max-h-60 overflow-y-auto">
+                    <!-- Comments will be listed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skill Learning Interface -->
+    <div id="learningInterface" class="fixed inset-0 bg-white hidden z-40">
+        <div class="h-full flex flex-col">
+            <div class="gradient-bg text-white p-4 flex justify-between items-center">
+                <h2 id="learningTitle" class="text-xl font-bold">Exploring Frontend</h2>
+                <button id="backToMain"
+                    class="bg-white bg-opacity-20 px-4 py-2 rounded-lg hover:bg-opacity-30 transition-colors">
+                    Back to Main
+                </button>
+            </div>
+            <div class="flex-1 p-8 overflow-y-auto">
+                <div class="max-w-6xl mx-auto">
+                    <div id="skillContent" class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                        <!-- Dynamic content will be loaded here -->
+                    </div>
+                    <div class="text-center">
+                        <button
+                            class="gradient-bg text-white px-8 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                            Start Learning Journey
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Interface language translations
+        const translations = {
+            en: {
+                welcome: "Welcome to SRISAY-VERSE",
+                subtitle: "Embark on your language learning journey with our interactive platform. Choose your language and start learning today!",
+                selectInterface: "Select Interface Language:",
+                chooseLanguage: "Choose Your Learning Language"
+            },
+            es: {
+                welcome: "Bienvenido a SRISAY-VERSE",
+                subtitle: "Embárcate en tu viaje de aprendizaje de idiomas con nuestra plataforma interactiva. ¡Elige tu idioma y comienza a aprender hoy!",
+                selectInterface: "Seleccionar idioma de interfaz:",
+                chooseLanguage: "Elige tu idioma de aprendizaje"
+            },
+            fr: {
+                welcome: "Bienvenue à SRISAY-VERSE",
+                subtitle: "Embarquez dans votre parcours d'apprentissage des langues avec notre plateforme interactive. Choisissez votre langue et commencez à apprendre aujourd'hui!",
+                selectInterface: "Sélectionner la langue de l'interface:",
+                chooseLanguage: "Choisissez votre langue d'apprentissage"
+            }
+        };
+
+        // Function to handle card clicks for skill selection
+        function handleCardClick(event, skillName) {
+            event.preventDefault();
+            selectSkill(skillName);
+        }
+
+        // Modal controls
+        document.getElementById('loginBtn').addEventListener('click', () => {
+            document.getElementById('loginModal').classList.remove('hidden');
+            document.getElementById('loginModal').classList.add('flex');
+        });
+
+        document.getElementById('adminBtn').addEventListener('click', () => {
+            document.getElementById('adminModal').classList.remove('hidden');
+            document.getElementById('adminModal').classList.add('flex');
+        });
+
+        document.getElementById('closeLogin').addEventListener('click', () => {
+            document.getElementById('loginModal').classList.add('hidden');
+            document.getElementById('loginModal').classList.remove('flex');
+        });
+
+        document.getElementById('closeAdmin').addEventListener('click', () => {
+            document.getElementById('adminModal').classList.add('hidden');
+            document.getElementById('adminModal').classList.remove('flex');
+        });
+
+        // Notification button in admin panel
+        document.getElementById('notificationBtn').addEventListener('click', () => {
+            document.getElementById('notificationPopupModal').classList.remove('hidden');
+            document.getElementById('notificationPopupModal').classList.add('flex');
+        });
+
+        document.getElementById('closeNotificationPopup').addEventListener('click', () => {
+            document.getElementById('notificationPopupModal').classList.add('hidden');
+            document.getElementById('notificationPopupModal').classList.remove('flex');
+        });
+
+        // Login form
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username && password) {
+                alert(`Welcome back, ${username}! You are now logged in.`);
+                document.getElementById('loginModal').classList.add('hidden');
+                document.getElementById('loginModal').classList.remove('flex');
+                document.getElementById('username').value = '';
+                document.getElementById('password').value = '';
+            } else {
+                alert('Please enter both username and password.');
+            }
+        });
+
+        // Admin login
+        document.getElementById('adminLoginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const adminUser = document.getElementById('adminUsername').value;
+            const adminPass = document.getElementById('adminPassword').value;
+
+            if (adminUser === 'admin' && adminPass === 'srisay2024') {
+                document.getElementById('adminLogin').classList.add('hidden');
+                document.getElementById('adminDashboard').classList.remove('hidden');
+                alert('Admin access granted! Welcome to the control panel.');
+            } else {
+                alert('Invalid admin credentials. Please try again.');
+            }
+        });
+
+        // Progress tracking data
+        let progressData = JSON.parse(localStorage.getItem('skillProgress')) || {};
+        let learningLinks = JSON.parse(localStorage.getItem('learningLinks')) || {};
+
+        // Save progress to localStorage
+        function saveProgress() {
+            localStorage.setItem('skillProgress', JSON.stringify(progressData));
+            localStorage.setItem('learningLinks', JSON.stringify(learningLinks));
+        }
+
+        // Helper functions for resources and features
+        function getSkillResources(skillName) {
+            const resourcesData = {
+                'Frontend': [
+                    { title: 'HTML', url: 'https://youtu.be/k2DSi1zGEc8?si=7s5FbayWi7bjSMQh' },
+                    { title: 'CSS (Basics)', url: 'https://youtu.be/k2DSi1zGEc8?si=7s5FbayWi7bjSMQh' },
+                    { title: 'CSS (Advanced)', url: 'https://youtu.be/WuiB5TAQOAM?si=V5WxfYRrAWUyBvE9' },
+                    { title: 'JavaScript (Basics)', url: 'https://youtu.be/sscX432bMZo?si=U6BdToUHaNcwuY4M' },
+                    { title: 'JavaScript (Advanced)', url: 'https://youtu.be/sscX432bMZo?si=U6BdToUHaNcwuY4M' },
+                    { title: 'React.js', url: 'https://youtu.be/CgkZ7MvWUAA?si=MnKsoaDBkMlrgEwi' },
+                    { title: 'Next.js', url: 'https://youtu.be/KjY94sAKLlw?si=LDX5cCsPLLHMxNuW' },
+                    { title: 'Vue.js', url: 'https://youtu.be/FXpIoQ_rT_c?si=FLacNgxIO4k1uQRq' }
+                ],
+                'UI/UX Designing': [
+                    { title: 'Color Theory', url: 'https://youtu.be/7Ba7hI1yAqc?si=HZNZ2-mywXLNp4Ft' },
+                    { title: 'Typography', url: 'https://youtu.be/uwNClNmekGU?si=qopMgxfvVf05Nx4v' },
+                    { title: 'Layout', url: 'https://youtu.be/NTmh8l-Xl4c?si=suO7CTaNcv0AGn40' },
+                    { title: 'Parallax Design', url: 'https://youtu.be/Cf_A81NhNWc?si=L-KQHX29AbC_ARyK' },
+                    { title: 'Figma', url: 'https://youtu.be/truRwcI7-kg?si=_pPr2WzciNGaIFg2' },
+                    { title: 'Canva Visual Elements', url: 'https://youtu.be/3Fu8sNrOex8?si=-jlqAV-hi6kYWZSQ' }
+                ],
+                'Backend': [
+                    { title: 'JavaScript', url: 'https://youtu.be/427pAhy9dI8?si=V57-zdiUl-UjWl2_' },
+                    { title: 'Node.js', url: 'https://www.youtube.com/watch?v=MIJt9H69QVc' },
+                    { title: 'Express.js', url: 'https://youtu.be/Oe421EPjeBE?si=jIuevTN6cbbiC_nD' },
+                    { title: 'RESTful APIs', url: 'https://youtu.be/MIJt9H69QVc?si=dUaarI57VyjcCLlO' },
+                    { title: 'PyTorch', url: 'https://youtu.be/V_xro1bcAuA?si=k9oLbgg79n-zOFv9' },
+                    { title: 'Git & GitHub', url: 'https://youtu.be/q8EevlEpQ2A?si=0Ih7sdoWRWyS001E' }
+                ],
+                'AI/ML': [
+                    { title: 'PyTorch', url: 'https://youtu.be/V_xro1bcAuA?si=k9oLbgg79n-zOFv9' },
+                    { title: 'Hugging Face (Part 1)', url: 'https://youtu.be/b665B04CWkI?si=e-buL-egGm2apfr1' },
+                    { title: 'Pandas', url: 'https://youtu.be/oiCppYglBIU?si=qjYcUshYqESTD122' },
+                    { title: 'NumPy', url: 'https://youtu.be/9DhZ-JCWvDw?si=_UwcOk47k59xXUxe' },
+                    { title: 'Matplotlib', url: 'https://youtu.be/kM_eVEEWfnE?si=xOut1GLMHRbC3FiV' },
+                    { title: 'Seaborn', url: 'https://youtu.be/XPXYyr3eN0s?si=tubzBiCpCkLwwI5l' },
+                    { title: 'Hugging Face (Part 2)', url: 'https://youtu.be/qUmWOVTTfPI?si=WfweMt9NNFxINZQP' }
+                ],
+                'Data Science': [
+                    { title: 'Python for Data Science', url: 'https://youtu.be/rfscVS0vtbw?si=example' },
+                    { title: 'Pandas Mastery', url: 'https://youtu.be/oiCppYglBIU?si=qjYcUshYqESTD122' },
+                    { title: 'NumPy Fundamentals', url: 'https://youtu.be/9DhZ-JCWvDw?si=_UwcOk47k59xXUxe' },
+                    { title: 'Data Visualization', url: 'https://youtu.be/kM_eVEEWfnE?si=xOut1GLMHRbC3FiV' },
+                    { title: 'Statistical Analysis', url: 'https://youtu.be/4YLtvNeRIrg?si=example' },
+                    { title: 'Machine Learning Basics', url: 'https://youtu.be/7eh4d6sabA0?si=example' }
+                ],
+                'Full Stack': [
+                    { title: 'Frontend Fundamentals', url: 'https://youtu.be/k2DSi1zGEc8?si=7s5FbayWi7bjSMQh' },
+                    { title: 'Backend Development', url: 'https://youtu.be/427pAhy9dI8?si=V57-zdiUl-UjWl2_' },
+                    { title: 'Database Design', url: 'https://youtu.be/ztHopE5Wnpc?si=example' },
+                    { title: 'API Development', url: 'https://youtu.be/MIJt9H69QVc?si=dUaarI57VyjcCLlO' },
+                    { title: 'Deployment & DevOps', url: 'https://youtu.be/q8EevlEpQ2A?si=0Ih7sdoWRWyS001E' },
+                    { title: 'Project Management', url: 'https://youtu.be/ZVQl5F8lS9g?si=example' }
+                ]
+            };
+            return resourcesData[skillName] || [];
+        }
+
+        function getSkillFeatures(skillName) {
+            const featuresData = {
+                'Frontend': [
+                    { icon: '🎨', title: 'Modern UI/UX', description: 'Create beautiful, responsive user interfaces with cutting-edge design principles' },
+                    { icon: '⚡', title: 'Performance Optimized', description: 'Build fast, efficient applications with optimized loading and rendering' },
+                    { icon: '🔧', title: 'Interactive Components', description: 'Develop dynamic, reusable components for enhanced user experience' }
+                ],
+                'UI/UX Designing': [
+                    { icon: '🎯', title: 'User-Centric Design', description: 'Focus on user needs and behaviors to create intuitive experiences' },
+                    { icon: '📱', title: 'Responsive Design', description: 'Ensure seamless experience across all devices and screen sizes' },
+                    { icon: '🧠', title: 'Psychology-Driven', description: 'Apply color theory and cognitive principles for better engagement' }
+                ],
+                'Backend': [
+                    { icon: '🔒', title: 'Secure & Scalable', description: 'Build robust, secure systems that can handle growing user demands' },
+                    { icon: '⚙️', title: 'API-First Architecture', description: 'Design flexible APIs that power modern web and mobile applications' },
+                    { icon: '📊', title: 'Data Management', description: 'Efficiently handle, process, and store application data' }
+                ],
+                'AI/ML': [
+                    { icon: '🧠', title: 'Intelligent Automation', description: 'Create systems that learn and adapt to improve performance over time' },
+                    { icon: '📈', title: 'Predictive Analytics', description: 'Extract insights from data to make informed business decisions' },
+                    { icon: '🔍', title: 'Pattern Recognition', description: 'Identify complex patterns and trends in large datasets' }
+                ],
+                'Data Science': [
+                    { icon: '📊', title: 'Data-Driven Insights', description: 'Transform raw data into actionable business intelligence' },
+                    { icon: '🔬', title: 'Statistical Analysis', description: 'Apply rigorous statistical methods to validate findings' },
+                    { icon: '📈', title: 'Predictive Modeling', description: 'Build models to forecast trends and outcomes' }
+                ],
+                'Full Stack': [
+                    { icon: '🚀', title: 'End-to-End Solutions', description: 'Complete development lifecycle from concept to deployment' },
+                    { icon: '🔄', title: 'Seamless Integration', description: 'Connect frontend and backend systems for unified functionality' },
+                    { icon: '⚡', title: 'Optimized Performance', description: 'Ensure fast, reliable performance across the entire stack' }
+                ]
+            };
+            return featuresData[skillName] || [];
+        }
+
+        // Skill data
+        const skillData = {
+            'Frontend': {
+                title: 'Frontend Development',
+                description: 'Master modern web development with cutting-edge technologies',
+                technologies: [
+                    { name: 'HTML', description: 'Structure and semantic markup for web pages', level: 'Foundation', color: 'bg-orange-500' },
+                    { name: 'CSS', description: 'Styling, animations, and responsive design', level: 'Foundation', color: 'bg-blue-500' },
+                    { name: 'JavaScript', description: 'Dynamic functionality and interactivity', level: 'Core', color: 'bg-yellow-500' },
+                    { name: 'React.js', description: 'Component-based UI library for building interfaces', level: 'Advanced', color: 'bg-cyan-500' },
+                    { name: 'Vue.js', description: 'Progressive framework for building user interfaces', level: 'Advanced', color: 'bg-green-500' },
+                    { name: 'Next.js', description: 'Full-stack React framework with SSR capabilities', level: 'Expert', color: 'bg-black' }
+                ]
+            },
+            'UI/UX Designing': {
+                title: 'UI/UX Design',
+                description: 'Create beautiful and intuitive user experiences',
+                technologies: [
+                    { name: 'Parallax Design', description: 'Creating depth and immersion through scrolling effects', level: 'Advanced', color: 'bg-purple-500' },
+                    { name: 'Color Theory', description: 'Understanding color psychology and harmony', level: 'Foundation', color: 'bg-pink-500' },
+                    { name: 'Typography', description: 'Art of arranging type for readability and appeal', level: 'Core', color: 'bg-indigo-500' },
+                    { name: 'Layouts', description: 'Grid systems and spatial organization', level: 'Core', color: 'bg-teal-500' },
+                    { name: 'Figma', description: 'Collaborative design and prototyping tool', level: 'Professional', color: 'bg-red-500' },
+                    { name: 'Canva Visual Elements', description: 'Creating stunning visual content and graphics', level: 'Creative', color: 'bg-blue-600' }
+                ]
+            },
+            'Backend': {
+                title: 'Backend Development',
+                description: 'Build robust server-side applications and APIs',
+                technologies: [
+                    { name: 'Node.js', description: 'JavaScript runtime for server-side development', level: 'Core', color: 'bg-green-600' },
+                    { name: 'Express.js', description: 'Fast, minimalist web framework for Node.js', level: 'Core', color: 'bg-gray-600' },
+                    { name: 'JavaScript', description: 'Server-side scripting and logic', level: 'Foundation', color: 'bg-yellow-500' },
+                    { name: 'RESTful API', description: 'Design and implement REST architectural style', level: 'Advanced', color: 'bg-blue-600' },
+                    { name: 'PyTorch', description: 'Deep learning framework for AI applications', level: 'Specialized', color: 'bg-orange-600' },
+                    { name: 'Git & GitHub', description: 'Version control and collaborative development', level: 'Essential', color: 'bg-black' }
+                ]
+            },
+            'AI/ML': {
+                title: 'Artificial Intelligence & Machine Learning',
+                description: 'Build intelligent systems and data-driven solutions',
+                technologies: [
+                    { name: 'PyTorch', description: 'Deep learning framework for neural networks', level: 'Core', color: 'bg-orange-600' },
+                    { name: 'Hugging Face', description: 'Transformers and pre-trained models hub', level: 'Advanced', color: 'bg-yellow-600' },
+                    { name: 'Pandas', description: 'Data manipulation and analysis library', level: 'Foundation', color: 'bg-blue-700' },
+                    { name: 'NumPy', description: 'Numerical computing with Python', level: 'Foundation', color: 'bg-blue-800' },
+                    { name: 'Matplotlib', description: 'Comprehensive plotting and visualization', level: 'Visualization', color: 'bg-green-700' },
+                    { name: 'Seaborn', description: 'Statistical data visualization library', level: 'Visualization', color: 'bg-teal-600' }
+                ]
+            },
+            'Data Science': {
+                title: 'Data Science',
+                description: 'Transform raw data into actionable insights',
+                technologies: [
+                    { name: 'Python', description: 'Primary programming language for data science', level: 'Foundation', color: 'bg-blue-600' },
+                    { name: 'Pandas', description: 'Data manipulation and analysis', level: 'Core', color: 'bg-blue-700' },
+                    { name: 'NumPy', description: 'Numerical computing and array operations', level: 'Core', color: 'bg-blue-800' },
+                    { name: 'Data Visualization', description: 'Creating meaningful charts and graphs', level: 'Advanced', color: 'bg-green-600' },
+                    { name: 'Statistical Analysis', description: 'Statistical methods and hypothesis testing', level: 'Advanced', color: 'bg-purple-600' },
+                    { name: 'Machine Learning', description: 'Predictive modeling and algorithms', level: 'Expert', color: 'bg-red-600' }
+                ]
+            },
+            'Full Stack': {
+                title: 'Full Stack Development',
+                description: 'End-to-end web application development',
+                technologies: [
+                    { name: 'Frontend Technologies', description: 'React, Vue, HTML, CSS, JavaScript', level: 'Core', color: 'bg-cyan-500' },
+                    { name: 'Backend Technologies', description: 'Node.js, Express, APIs, Databases', level: 'Core', color: 'bg-green-600' },
+                    { name: 'Database Management', description: 'SQL, NoSQL, data modeling', level: 'Advanced', color: 'bg-orange-600' },
+                    { name: 'DevOps & Deployment', description: 'CI/CD, cloud platforms, containerization', level: 'Professional', color: 'bg-purple-600' },
+                    { name: 'System Architecture', description: 'Scalable application design patterns', level: 'Expert', color: 'bg-gray-700' },
+                    { name: 'Project Management', description: 'Agile methodologies and team collaboration', level: 'Leadership', color: 'bg-indigo-600' }
+                ]
+            }
+        };
+
+        // Skill selection
+        function selectSkill(skillName) {
+            const skill = skillData[skillName];
+            if (!skill) return;
+
+            document.getElementById('learningTitle').textContent = `Exploring ${skillName}`;
+
+            const skillContent = document.getElementById('skillContent');
+
+            // Get resources and features for this skill
+            const skillResources = getSkillResources(skillName);
+            const skillFeatures = getSkillFeatures(skillName);
+
+            skillContent.innerHTML = `
+                <div class="flex justify-between items-center mb-6">
+                    <div>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-2">${skill.title}</h3>
+                        <p class="text-lg text-gray-600">${skill.description}</p>
+                    </div>
+                    <button onclick="openProgressTracker('${skillName}')" class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors">
+                        📊 Progress Tracker
+                    </button>
+                </div>
+
+                <!-- Features Section -->
+                <div class="mb-8">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                        <span class="text-3xl mr-3">✨</span> Key Features
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        ${skillFeatures.map(feature => `
+                            <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl p-6 border border-purple-100">
+                                <div class="text-3xl mb-3">${feature.icon}</div>
+                                <h5 class="text-lg font-semibold text-gray-800 mb-2">${feature.title}</h5>
+                                <p class="text-gray-600 text-sm">${feature.description}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <!-- Technologies Section -->
+                <div class="mb-8">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                        <span class="text-3xl mr-3">🛠️</span> Core Technologies
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        ${skill.technologies.map(tech => {
+                const progress = progressData[tech.name] || { completed: 0, total: 10 };
+                const progressPercent = Math.round((progress.completed / progress.total) * 100);
+                return `
+                            <div class="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer" onclick="exploreTechnology('${tech.name}')">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center">
+                                        <div class="w-4 h-4 ${tech.color} rounded-full mr-3"></div>
+                                        <h4 class="text-lg font-semibold text-gray-800">${tech.name}</h4>
+                                    </div>
+                                    <span class="text-sm font-medium text-gray-600">${progressPercent}%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2 mb-3">
+                                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full transition-all duration-300" style="width: ${progressPercent}%"></div>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-3">${tech.description}</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                                        ${tech.level}
+                                    </span>
+                                    <button onclick="event.stopPropagation(); addLearningLink('${tech.name}')" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                                        + Add Link
+                                    </button>
+                                </div>
+                            </div>
+                        `}).join('')}
+                    </div>
+                </div>
+
+                <!-- Resources Section -->
+                <div class="mb-8">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                        <span class="text-3xl mr-3">📚</span> Learning Resources
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        ${skillResources.map(resource => `
+                            <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                <h5 class="font-semibold text-gray-800 mb-2">${resource.title}</h5>
+                                <a href="${resource.url}" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm underline">Watch Lecture →</a>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <div class="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg">
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Learning Path</h4>
+                    <div class="flex flex-wrap gap-2">
+                        ${skill.technologies.map((tech, index) => `
+                            <div class="flex items-center">
+                                <span class="px-3 py-1 bg-white rounded-full text-sm font-medium text-gray-700 shadow-sm">
+                                    ${index + 1}. ${tech.name}
+                                </span>
+                                ${index < skill.technologies.length - 1 ? '<span class="mx-2 text-gray-400">→</span>' : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('learningInterface').classList.remove('hidden');
+        }
+
+        // Technology exploration
+        function exploreTechnology(techName) {
+            const links = learningLinks[techName] || [];
+            let linksList = links.length > 0 ? '\n\nYour saved resources:\n' + links.map(link => `• ${link.title}: ${link.url}`).join('\n') : '';
+
+            alert(`🚀 Exploring ${techName}!\n\nThis would open detailed learning materials, tutorials, and hands-on projects for ${techName}. In a full implementation, you'd see:\n\n• Interactive tutorials\n• Code examples\n• Practice exercises\n• Project templates\n• Community resources${linksList}`);
+        }
+
+        // Progress tracker functions
+        let currentSkillForProgress = '';
+        let comments = JSON.parse(localStorage.getItem('learningComments')) || [];
+        let resources = JSON.parse(localStorage.getItem('learningResources')) || [];
+
+        function openProgressTracker(skillName) {
+            currentSkillForProgress = skillName;
+            document.getElementById('progressModal').classList.remove('hidden');
+            document.getElementById('progressModal').classList.add('flex');
+
+            // Populate skill dropdown
+            const skillSelect = document.getElementById('linkSkill');
+            const skill = skillData[skillName];
+            skillSelect.innerHTML = '<option value="">Select Skill</option>' +
+                skill.technologies.map(tech => `<option value="${tech.name}">${tech.name}</option>`).join('');
+
+            generateCalendar();
+            updateProgressDisplay(skillName);
+            updateResourcesList();
+            updateCommentsList();
+        }
+
+        function generateCalendar() {
+            const calendarDays = document.getElementById('calendarDays');
+            const today = new Date();
+            const currentMonth = today.getMonth();
+            const currentYear = today.getFullYear();
+
+            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+            let calendarHTML = '';
+
+            // Empty cells for days before month starts
+            for (let i = 0; i < firstDay; i++) {
+                calendarHTML += '<div class="h-8"></div>';
+            }
+
+            // Days of the month
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                const hasActivity = comments.some(comment => comment.date === dateStr);
+                const isToday = day === today.getDate();
+
+                let dayClass = 'h-8 flex items-center justify-center text-sm rounded cursor-pointer hover:bg-gray-200 transition-colors';
+                if (isToday) dayClass += ' bg-blue-500 text-white hover:bg-blue-600';
+                else if (hasActivity) dayClass += ' bg-green-500 text-white hover:bg-green-600';
+
+                calendarHTML += `<div class="${dayClass}" onclick="selectDate('${dateStr}')">${day}</div>`;
+            }
+
+            calendarDays.innerHTML = calendarHTML;
+        }
+
+        function selectDate(dateStr) {
+            document.getElementById('commentDate').value = dateStr;
+        }
+
+        function updateProgressDisplay(skillName) {
+            const skill = skillData[skillName];
+            const progressList = document.getElementById('skillProgressList');
+
+            progressList.innerHTML = skill.technologies.map(tech => {
+                const progress = progressData[tech.name] || { completed: 0, total: 10 };
+                const progressPercent = Math.round((progress.completed / progress.total) * 100);
+
+                return `
+                    <div class="bg-white rounded-lg p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-medium text-gray-800">${tech.name}</span>
+                            <span class="text-sm text-gray-600">${progress.completed}/${progress.total}</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                            <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full" style="width: ${progressPercent}%"></div>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button onclick="updateProgress('${tech.name}', -1)" class="bg-red-500 text-white px-2 py-1 rounded text-xs hover:bg-red-600">-</button>
+                            <button onclick="updateProgress('${tech.name}', 1)" class="bg-green-500 text-white px-2 py-1 rounded text-xs hover:bg-green-600">+</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function updateProgress(techName, change) {
+            if (!progressData[techName]) {
+                progressData[techName] = { completed: 0, total: 10 };
+            }
+
+            progressData[techName].completed = Math.max(0, Math.min(progressData[techName].total, progressData[techName].completed + change));
+            saveProgress();
+            updateProgressDisplay(currentSkillForProgress);
+
+            // Refresh the main skill display if it's currently shown
+            if (!document.getElementById('learningInterface').classList.contains('hidden')) {
+                selectSkill(currentSkillForProgress);
+            }
+        }
+
+        function addLearningLink(techName) {
+            const url = prompt('Enter learning resource URL:');
+            const title = prompt('Enter resource title:');
+
+            if (url && title) {
+                if (!learningLinks[techName]) {
+                    learningLinks[techName] = [];
+                }
+                learningLinks[techName].push({ title, url, date: new Date().toISOString().split('T')[0] });
+                saveProgress();
+                alert('Learning resource added successfully!');
+            }
+        }
+
+        function addResourceLink() {
+            const title = document.getElementById('linkTitle').value;
+            const url = document.getElementById('linkUrl').value;
+            const skill = document.getElementById('linkSkill').value;
+
+            if (title && url && skill) {
+                resources.push({
+                    id: Date.now(),
+                    title,
+                    url,
+                    skill,
+                    date: new Date().toISOString().split('T')[0]
+                });
+
+                localStorage.setItem('learningResources', JSON.stringify(resources));
+
+                document.getElementById('linkTitle').value = '';
+                document.getElementById('linkUrl').value = '';
+                document.getElementById('linkSkill').value = '';
+
+                updateResourcesList();
+                alert('Resource added successfully!');
+            } else {
+                alert('Please fill in all fields');
+            }
+        }
+
+        function updateResourcesList() {
+            const resourcesList = document.getElementById('resourcesList');
+            const skillResources = resources.filter(resource =>
+                skillData[currentSkillForProgress].technologies.some(tech => tech.name === resource.skill)
+            );
+
+            resourcesList.innerHTML = skillResources.map(resource => `
+                <div class="bg-white rounded-lg p-3 flex justify-between items-center">
+                    <div>
+                        <a href="${resource.url}" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">${resource.title}</a>
+                        <div class="text-xs text-gray-500">${resource.skill} • ${resource.date}</div>
+                    </div>
+                    <button onclick="removeResource(${resource.id})" class="text-red-500 hover:text-red-700 text-sm">Remove</button>
+                </div>
+            `).join('') || '<p class="text-gray-500 text-sm">No resources added yet</p>';
+        }
+
+        function removeResource(id) {
+            resources = resources.filter(resource => resource.id !== id);
+            localStorage.setItem('learningResources', JSON.stringify(resources));
+            updateResourcesList();
+        }
+
+        function addComment() {
+            const text = document.getElementById('commentText').value;
+            const date = document.getElementById('commentDate').value || new Date().toISOString().split('T')[0];
+
+            if (text) {
+                comments.push({
+                    id: Date.now(),
+                    text,
+                    date,
+                    skill: currentSkillForProgress
+                });
+
+                localStorage.setItem('learningComments', JSON.stringify(comments));
+
+                document.getElementById('commentText').value = '';
+                document.getElementById('commentDate').value = '';
+
+                updateCommentsList();
+                generateCalendar();
+                alert('Note added successfully!');
+            } else {
+                alert('Please enter a comment');
+            }
+        }
+
+        function updateCommentsList() {
+            const commentsList = document.getElementById('commentsList');
+            const skillComments = comments.filter(comment => comment.skill === currentSkillForProgress)
+                .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+            commentsList.innerHTML = skillComments.map(comment => `
+                <div class="bg-white rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-sm text-gray-500">${comment.date}</span>
+                        <button onclick="removeComment(${comment.id})" class="text-red-500 hover:text-red-700 text-sm">Remove</button>
+                    </div>
+                    <p class="text-gray-800">${comment.text}</p>
+                </div>
+            `).join('') || '<p class="text-gray-500 text-sm">No notes added yet</p>';
+        }
+
+        function removeComment(id) {
+            comments = comments.filter(comment => comment.id !== id);
+            localStorage.setItem('learningComments', JSON.stringify(comments));
+            updateCommentsList();
+            generateCalendar();
+        }
+
+        // Close progress modal
+        document.getElementById('closeProgress').addEventListener('click', () => {
+            document.getElementById('progressModal').classList.add('hidden');
+            document.getElementById('progressModal').classList.remove('flex');
+        });
+
+        // Set today's date as default
+        document.getElementById('commentDate').value = new Date().toISOString().split('T')[0];
+
+        // Back to main
+        document.getElementById('backToMain').addEventListener('click', () => {
+            document.getElementById('learningInterface').classList.add('hidden');
+        });
+
+        // Interface language change
+        document.getElementById('interfaceLanguage').addEventListener('change', (e) => {
+            const lang = e.target.value;
+            if (translations[lang]) {
+                document.querySelector('h2').textContent = translations[lang].welcome;
+                document.querySelector('p').textContent = translations[lang].subtitle;
+            }
+        });
+
+        // Admin dashboard interactions
+        document.addEventListener('click', (e) => {
+            // Remove user
+            if (e.target.classList.contains('remove-user-btn')) {
+                const username = e.target.dataset.username;
+                if (confirm(`Are you sure you want to remove user "${username}"?`)) {
+                    removeUser(username);
+                }
+            }
+        });
+
+        // User management functions
+        let users = JSON.parse(localStorage.getItem('users')) || [
+            { username: 'john_doe', activity: 'Learning Spanish' },
+            { username: 'maria_garcia', activity: 'Learning French' }
+        ];
+
+        function renderUsers() {
+            const userList = document.getElementById('userList');
+            userList.innerHTML = '';
+            users.forEach(user => {
+                const userDiv = document.createElement('div');
+                userDiv.className = 'flex items-center justify-between bg-white p-4 rounded-lg';
+                userDiv.innerHTML = `
+                    <div>
+                        <span class="font-medium">${user.username}</span>
+                        <span class="text-gray-500 ml-2">${user.activity}</span>
+                    </div>
+                    <div class="space-x-2">
+                        <button onclick="editUser('${user.username}', '${user.activity}')"
+                            class="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600">Edit</button>
+                        <button data-username="${user.username}" class="remove-user-btn bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600">Remove</button>
+                    </div>
+                `;
+                userList.appendChild(userDiv);
+            });
+        }
+
+        function editUser(username, activity) {
+            document.getElementById('editUserName').value = username;
+            document.getElementById('editUserActivity').value = activity;
+            document.getElementById('editUserModal').classList.remove('hidden');
+            document.getElementById('editUserModal').classList.add('flex');
+        }
+
+        function removeUser(username) {
+            users = users.filter(u => u.username !== username);
+            localStorage.setItem('users', JSON.stringify(users));
+            renderUsers();
+            alert(`User "${username}" removed successfully.`);
+        }
+
+        document.getElementById('cancelEditUser').addEventListener('click', () => {
+            document.getElementById('editUserModal').classList.add('hidden');
+            document.getElementById('editUserModal').classList.remove('flex');
+        });
+
+        document.getElementById('editUserForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('editUserName').value.trim();
+            const activity = document.getElementById('editUserActivity').value.trim();
+
+            if (!username || !activity) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Update user or add if new
+            const index = users.findIndex(u => u.username === username);
+            if (index !== -1) {
+                users[index].activity = activity;
+            } else {
+                users.push({ username, activity });
+            }
+
+            localStorage.setItem('users', JSON.stringify(users));
+            renderUsers();
+            document.getElementById('editUserModal').classList.add('hidden');
+            document.getElementById('editUserModal').classList.remove('flex');
+            alert('User details updated successfully.');
+        });
+
+        // Initial render
+        renderUsers();
+
+        // Internships management
+        let internships = JSON.parse(localStorage.getItem('internships')) || [];
+
+        function renderInternships() {
+            const internshipList = document.getElementById('internshipList');
+            internshipList.innerHTML = '';
+            internships.forEach((internship, index) => {
+                const internshipDiv = document.createElement('div');
+                internshipDiv.className = 'bg-white p-4 rounded-lg';
+                internshipDiv.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h5 class="font-semibold text-gray-800">${internship.title}</h5>
+                            <p class="text-sm text-gray-600">${internship.company}</p>
+                        </div>
+                        <div class="space-x-2">
+                            <button onclick="editInternship(${index})"
+                                class="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600">Edit</button>
+                            <button onclick="deleteInternship(${index})"
+                                class="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600">Delete</button>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 text-sm mb-2">${internship.description}</p>
+                    <p class="text-sm text-gray-500">Deadline: ${new Date(internship.deadline).toLocaleDateString()}</p>
+                `;
+                internshipList.appendChild(internshipDiv);
+            });
+        }
+
+        function editInternship(index) {
+            const internship = internships[index];
+            document.getElementById('editInternshipTitle').value = internship.title;
+            document.getElementById('editInternshipCompany').value = internship.company;
+            document.getElementById('editInternshipDescription').value = internship.description;
+            document.getElementById('editInternshipDeadline').value = internship.deadline;
+            document.getElementById('editInternshipModal').dataset.index = index;
+            document.getElementById('editInternshipModal').classList.remove('hidden');
+            document.getElementById('editInternshipModal').classList.add('flex');
+        }
+
+        function deleteInternship(index) {
+            if (confirm('Are you sure you want to delete this internship?')) {
+                internships.splice(index, 1);
+                localStorage.setItem('internships', JSON.stringify(internships));
+                renderInternships();
+                alert('Internship deleted successfully.');
+            }
+        }
+
+        document.getElementById('internshipForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const title = document.getElementById('internshipTitle').value.trim();
+            const company = document.getElementById('internshipCompany').value.trim();
+            const description = document.getElementById('internshipDescription').value.trim();
+            const deadline = document.getElementById('internshipDeadline').value;
+
+            if (!title || !company || !description || !deadline) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            internships.push({ title, company, description, deadline });
+            localStorage.setItem('internships', JSON.stringify(internships));
+            renderInternships();
+
+            // Clear form
+            document.getElementById('internshipTitle').value = '';
+            document.getElementById('internshipCompany').value = '';
+            document.getElementById('internshipDescription').value = '';
+            document.getElementById('internshipDeadline').value = '';
+
+            alert('Internship added successfully.');
+        });
+
+        document.getElementById('cancelEditInternship').addEventListener('click', () => {
+            document.getElementById('editInternshipModal').classList.add('hidden');
+            document.getElementById('editInternshipModal').classList.remove('flex');
+        });
+
+        document.getElementById('editInternshipForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const index = document.getElementById('editInternshipModal').dataset.index;
+            const title = document.getElementById('editInternshipTitle').value.trim();
+            const company = document.getElementById('editInternshipCompany').value.trim();
+            const description = document.getElementById('editInternshipDescription').value.trim();
+            const deadline = document.getElementById('editInternshipDeadline').value;
+
+            if (!title || !company || !description || !deadline) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            internships[index] = { title, company, description, deadline };
+            localStorage.setItem('internships', JSON.stringify(internships));
+            renderInternships();
+            document.getElementById('editInternshipModal').classList.add('hidden');
+            document.getElementById('editInternshipModal').classList.remove('flex');
+            alert('Internship updated successfully.');
+        });
+
+        // Initial render internships
+        renderInternships();
+
+        // Hackathon management
+        let hackathonUsers = JSON.parse(localStorage.getItem('hackathonUsers')) || [];
+        let hackathonEvents = JSON.parse(localStorage.getItem('hackathonEvents')) || [];
+
+        function renderHackathonUsers() {
+            const userList = document.getElementById('hackathonUserList');
+            userList.innerHTML = '';
+            hackathonUsers.forEach((user, index) => {
+                const userDiv = document.createElement('div');
+                userDiv.className = 'bg-white p-3 rounded-lg';
+                userDiv.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h6 class="font-semibold text-gray-800">${user.name}</h6>
+                            <p class="text-sm text-gray-600">${user.email}</p>
+                        </div>
+                        <div class="space-x-1">
+                            <button onclick="editHackathonUser(${index})"
+                                class="bg-blue-500 text-white px-2 py-1 rounded text-xs hover:bg-blue-600">Edit</button>
+                            <button onclick="deleteHackathonUser(${index})"
+                                class="bg-red-500 text-white px-2 py-1 rounded text-xs hover:bg-red-600">Del</button>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500">Skills: ${user.skills}</p>
+                `;
+                userList.appendChild(userDiv);
+            });
+        }
+
+        function renderHackathonEvents() {
+            const eventList = document.getElementById('hackathonEventList');
+            eventList.innerHTML = '';
+            hackathonEvents.forEach((event, index) => {
+                const eventDiv = document.createElement('div');
+                eventDiv.className = 'bg-white p-3 rounded-lg';
+                eventDiv.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h6 class="font-semibold text-gray-800">${event.title}</h6>
+                            <p class="text-sm text-gray-600">${new Date(event.date).toLocaleDateString()}</p>
+                        </div>
+                        <div class="space-x-1">
+                            <button onclick="editHackathonEvent(${index})"
+                                class="bg-blue-500 text-white px-2 py-1 rounded text-xs hover:bg-blue-600">Edit</button>
+                            <button onclick="deleteHackathonEvent(${index})"
+                                class="bg-red-500 text-white px-2 py-1 rounded text-xs hover:bg-red-600">Del</button>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-700">${event.description}</p>
+                `;
+                eventList.appendChild(eventDiv);
+            });
+        }
+
+        function editHackathonUser(index) {
+            const user = hackathonUsers[index];
+            document.getElementById('editHackathonUserName').value = user.name;
+            document.getElementById('editHackathonUserEmail').value = user.email;
+            document.getElementById('editHackathonUserSkills').value = user.skills;
+            document.getElementById('editHackathonUserModal').dataset.index = index;
+            document.getElementById('editHackathonUserModal').classList.remove('hidden');
+            document.getElementById('editHackathonUserModal').classList.add('flex');
+        }
+
+        function deleteHackathonUser(index) {
+            if (confirm('Are you sure you want to delete this hackathon user?')) {
+                hackathonUsers.splice(index, 1);
+                localStorage.setItem('hackathonUsers', JSON.stringify(hackathonUsers));
+                renderHackathonUsers();
+                alert('Hackathon user deleted successfully.');
+            }
+        }
+
+        function editHackathonEvent(index) {
+            const event = hackathonEvents[index];
+            document.getElementById('editHackathonEventTitle').value = event.title;
+            document.getElementById('editHackathonEventDate').value = event.date;
+            document.getElementById('editHackathonEventDescription').value = event.description;
+            document.getElementById('editHackathonEventModal').dataset.index = index;
+            document.getElementById('editHackathonEventModal').classList.remove('hidden');
+            document.getElementById('editHackathonEventModal').classList.add('flex');
+        }
+
+        function deleteHackathonEvent(index) {
+            if (confirm('Are you sure you want to delete this hackathon event?')) {
+                hackathonEvents.splice(index, 1);
+                localStorage.setItem('hackathonEvents', JSON.stringify(hackathonEvents));
+                renderHackathonEvents();
+                alert('Hackathon event deleted successfully.');
+            }
+        }
+
+        document.getElementById('hackathonUserForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('hackathonUserName').value.trim();
+            const email = document.getElementById('hackathonUserEmail').value.trim();
+            const skills = document.getElementById('hackathonUserSkills').value.trim();
+
+            if (!name || !email || !skills) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            hackathonUsers.push({ name, email, skills });
+            localStorage.setItem('hackathonUsers', JSON.stringify(hackathonUsers));
+            renderHackathonUsers();
+
+            // Clear form
+            document.getElementById('hackathonUserName').value = '';
+            document.getElementById('hackathonUserEmail').value = '';
+            document.getElementById('hackathonUserSkills').value = '';
+
+            alert('Hackathon user added successfully.');
+        });
+
+        document.getElementById('hackathonEventForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const title = document.getElementById('hackathonEventTitle').value.trim();
+            const date = document.getElementById('hackathonEventDate').value;
+            const description = document.getElementById('hackathonEventDescription').value.trim();
+
+            if (!title || !date || !description) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            hackathonEvents.push({ title, date, description });
+            localStorage.setItem('hackathonEvents', JSON.stringify(hackathonEvents));
+            renderHackathonEvents();
+
+            // Clear form
+            document.getElementById('hackathonEventTitle').value = '';
+            document.getElementById('hackathonEventDate').value = '';
+            document.getElementById('hackathonEventDescription').value = '';
+
+            alert('Hackathon event added successfully.');
+        });
+
+        document.getElementById('cancelEditHackathonUser').addEventListener('click', () => {
+            document.getElementById('editHackathonUserModal').classList.add('hidden');
+            document.getElementById('editHackathonUserModal').classList.remove('flex');
+        });
+
+        document.getElementById('editHackathonUserForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const index = document.getElementById('editHackathonUserModal').dataset.index;
+            const name = document.getElementById('editHackathonUserName').value.trim();
+            const email = document.getElementById('editHackathonUserEmail').value.trim();
+            const skills = document.getElementById('editHackathonUserSkills').value.trim();
+
+            if (!name || !email || !skills) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            hackathonUsers[index] = { name, email, skills };
+            localStorage.setItem('hackathonUsers', JSON.stringify(hackathonUsers));
+            renderHackathonUsers();
+            document.getElementById('editHackathonUserModal').classList.add('hidden');
+            document.getElementById('editHackathonUserModal').classList.remove('flex');
+            alert('Hackathon user updated successfully.');
+        });
+
+        document.getElementById('cancelEditHackathonEvent').addEventListener('click', () => {
+            document.getElementById('editHackathonEventModal').classList.add('hidden');
+            document.getElementById('editHackathonEventModal').classList.remove('flex');
+        });
+
+        document.getElementById('editHackathonEventForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const index = document.getElementById('editHackathonEventModal').dataset.index;
+            const title = document.getElementById('editHackathonEventTitle').value.trim();
+            const date = document.getElementById('editHackathonEventDate').value;
+            const description = document.getElementById('editHackathonEventDescription').value.trim();
+
+            if (!title || !date || !description) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            hackathonEvents[index] = { title, date, description };
+            localStorage.setItem('hackathonEvents', JSON.stringify(hackathonEvents));
+            renderHackathonEvents();
+            document.getElementById('editHackathonEventModal').classList.add('hidden');
+            document.getElementById('editHackathonEventModal').classList.remove('flex');
+            alert('Hackathon event updated successfully.');
+        });
+
+        // Initial render hackathon
+        renderHackathonUsers();
+        renderHackathonEvents();
+
+        // Notifications management
+        let notifications = JSON.parse(localStorage.getItem('notifications')) || [];
+
+        function renderNotifications() {
+            const notificationList = document.getElementById('notificationList');
+            notificationList.innerHTML = '';
+            notifications.forEach((notification, index) => {
+                const notificationDiv = document.createElement('div');
+                notificationDiv.className = 'bg-white p-4 rounded-lg';
+                notificationDiv.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h6 class="font-semibold text-gray-800">${notification.title}</h6>
+                        </div>
+                        <div class="space-x-2">
+                            <button onclick="editNotification(${index})"
+                                class="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600">Edit</button>
+                            <button onclick="deleteNotification(${index})"
+                                class="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600">Delete</button>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 text-sm">${notification.message}</p>
+                `;
+                notificationList.appendChild(notificationDiv);
+            });
+        }
+
+        function editNotification(index) {
+            const notification = notifications[index];
+            document.getElementById('editNotificationTitle').value = notification.title;
+            document.getElementById('editNotificationMessage').value = notification.message;
+            document.getElementById('editNotificationModal').dataset.index = index;
+            document.getElementById('editNotificationModal').classList.remove('hidden');
+            document.getElementById('editNotificationModal').classList.add('flex');
+        }
+
+        function deleteNotification(index) {
+            if (confirm('Are you sure you want to delete this notification?')) {
+                notifications.splice(index, 1);
+                localStorage.setItem('notifications', JSON.stringify(notifications));
+                renderNotifications();
+                alert('Notification deleted successfully.');
+            }
+        }
+
+        document.getElementById('notificationForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const title = document.getElementById('notificationTitle').value.trim();
+            const message = document.getElementById('notificationMessage').value.trim();
+
+            if (!title || !message) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            notifications.push({ title, message });
+            localStorage.setItem('notifications', JSON.stringify(notifications));
+            renderNotifications();
+
+            // Clear form
+            document.getElementById('notificationTitle').value = '';
+            document.getElementById('notificationMessage').value = '';
+
+            alert('Notification added successfully.');
+        });
+
+        document.getElementById('cancelEditNotification').addEventListener('click', () => {
+            document.getElementById('editNotificationModal').classList.add('hidden');
+            document.getElementById('editNotificationModal').classList.remove('flex');
+        });
+
+        document.getElementById('editNotificationForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const index = document.getElementById('editNotificationModal').dataset.index;
+            const title = document.getElementById('editNotificationTitle').value.trim();
+            const message = document.getElementById('editNotificationMessage').value.trim();
+
+            if (!title || !message) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            notifications[index] = { title, message };
+            localStorage.setItem('notifications', JSON.stringify(notifications));
+            renderNotifications();
+            document.getElementById('editNotificationModal').classList.add('hidden');
+            document.getElementById('editNotificationModal').classList.remove('flex');
+            alert('Notification updated successfully.');
+        });
+
+        // Initial render notifications
+        renderNotifications();
+
+        // Scroll-based navigation highlighting
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('div[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100; // Offset for header
+                const sectionHeight = section.offsetHeight;
+                const scrollPosition = window.scrollY;
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('bg-purple-800', 'text-white');
+                link.classList.add('text-white');
+
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('bg-purple-800', 'text-white');
+                    link.classList.remove('text-white');
+                }
+            });
+        }
+
+        // Add scroll event listener
+        window.addEventListener('scroll', updateActiveNavLink);
+
+        // Initialize active nav link on page load
+        updateActiveNavLink();
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    const offsetTop = targetSection.offsetTop - 80; // Offset for fixed header
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'97e8258d33907943',t:'MTc1Nzc3MTc3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
